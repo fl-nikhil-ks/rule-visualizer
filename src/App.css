@@ -1,38 +1,360 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f3f4f6;
+  color: #111827;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
   min-height: 100vh;
+}
+
+.rule-selector {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #e5e7eb;
+}
+
+.selector-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.selector-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.selector-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.selector-buttons button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.selector-buttons button:hover {
+  background: #d1d5db;
+}
+
+.selector-buttons button.active {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.rule-header {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #e5e7eb;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.event-badge {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.rule-count {
+  font-size: 14px;
+  color: #374151;
+}
+
+.expand-button {
+  padding: 8px 16px;
+  background: #e5e7eb;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.expand-button:hover {
+  background: #d1d5db;
+}
+
+.event-message {
+  color: #4b5563;
+  margin: 0 0 16px 0;
+  font-size: 14px;
+}
+
+.legend {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #111827;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-box {
+  width: 16px;
+  height: 16px;
+  border: 2px solid;
+  border-radius: 4px;
+}
+
+.legend-box.bg-blue-50 {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.legend-box.bg-purple-50 {
+  background: #faf5ff;
+  border-color: #e9d5ff;
+}
+
+.condition-count {
+  margin-left: auto;
+  color: #4b5563;
+}
+
+.rule-conditions {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+}
+
+.rule-conditions h2 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.rule-set-form {
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
+  gap: 8px;
+}
+
+.rule-set-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.rule-set-form input,
+.rule-set-form textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rule-set-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.rule-set-error {
+  margin: 0;
+  font-size: 12px;
+  color: #b91c1c;
+}
+
+.group-container {
+  border-left: 4px solid;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.group-container.bg-blue-50 {
+  background: #f8fbff;
+}
+
+.group-container.border-blue-200 {
+  border-color: #bfdbfe;
+}
+
+.group-container.bg-purple-50 {
+  background: #fbf6ff;
+}
+
+.group-container.border-purple-200 {
+  border-color: #e9d5ff;
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #4b5563;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.bg-blue-500 {
+  background: #3b82f6;
+}
+
+.badge.bg-purple-500 {
+  background: #8b5cf6;
+}
+
+.group-count {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.group-children {
+  margin-top: 12px;
+  margin-left: 28px;
+}
+
+.condition-card {
+  background: #0f172a0a;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+  transition: box-shadow 0.2s;
+  color: #0b1220;
+}
+
+.condition-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.condition-content {
+  flex: 1;
+}
+
+.condition-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+  color: #0b1220;
+  font-weight: 600;
+}
+
+.fact-code {
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  background: #e5e7eb;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #0b1220;
+  font-weight: 700;
+}
+
+.operator {
+  font-size: 18px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.value-code {
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  background: #e5e7eb;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #0b1220;
+  font-weight: 700;
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.message-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #0b1220;
+  font-weight: 600;
+}
+
+.message-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: #6b7280;
 }
