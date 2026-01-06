@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rule-visualizer/static/css/main.57195c4d.css",
+    "main.js": "/rule-visualizer/static/js/main.f718d2d6.js",
+    "index.html": "/rule-visualizer/index.html",
+    "main.57195c4d.css.map": "/rule-visualizer/static/css/main.57195c4d.css.map",
+    "main.f718d2d6.js.map": "/rule-visualizer/static/js/main.f718d2d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.57195c4d.css",
+    "static/js/main.f718d2d6.js"
+  ]
+}
